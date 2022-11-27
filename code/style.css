@@ -1,0 +1,162 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav {
+  background-color: #fff;
+  border-radius: 50px;
+  padding: 10px;
+  box-shadow: 0 25px 20px -20px rgba(0, 0, 0, 0.4);
+}
+
+nav a:link {
+  text-decoration: none;
+}
+
+nav ul li {
+  list-style: none;
+  display: inline-block;
+  padding: 13px 35px;
+  margin: 10px auto;
+  font-size: 18px;
+  font-weight: 500;
+  color: #777;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  transition: color 0.5s;
+}
+
+nav ul li::after {
+  content: "";
+  background: #f44566;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  opacity: 0;
+  transition: top 0.5s, opacity 0.5s;
+}
+
+nav ul li:hover {
+  color: #fff;
+}
+
+nav ul li:hover::after {
+  top: 50%;
+  opacity: 1;
+}
+
+.shell {
+  height: 100vh;
+  overflow-x: hidden;
+  perspective: 3px;
+}
+
+.shell div {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: 30px;
+  letter-spacing: 2px;
+}
+
+.image {
+  transform: translateZ(-1px) scale(1.6);
+  background-size: cover;
+  height: 100vh;
+  z-index: -1;
+}
+
+.text {
+  height: 50vh;
+  background-color: #fff;
+}
+
+.text:first-child {
+  height: 20vh;
+}
+
+.text h1 {
+  color: #000;
+}
+
+.heading {
+  z-index: -1;
+  transform: translateY(-30vh) translateZ(1px);
+  color: #fff;
+  font-size: 30px;
+}
+
+.wrap {
+  background: url(./img/opening.jpeg);
+  background-size: cover;
+  background-attachment: fixed;
+  /* overflow-x: hidden; */
+}
+
+.banner {
+  width: 60%;
+  height: 100vh;
+
+  margin: auto;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+.desc {
+  align-self: end;
+  margin-top: 150px;
+  border-radius: 20px;
+  width: 450px;
+  height: 350px;
+  /* 设置渐变 */
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.2)
+  );
+  /* 重点：使元素背景模糊化 */
+  backdrop-filter: blur(11px);
+  /* 设置上高光和左高光，使其看起来更加逼真 */
+  border-top: 1px solid rgba(255, 255, 255, 0.8);
+  border-left: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+}
+
+.line {
+  display: inline-block;
+  margin-top: 30px;
+  width: 100px;
+  height: 6px;
+  background: #cee002;
+  margin-left: 10px;
+}
+
+.desc p {
+  width: 100%;
+  height: 50vh;
+  color: #f7f7f7;
+  font: 900 30px "";
+  margin-left: 10px;
+  font-weight: 200;
+  padding-top: 10px;
+  font-style: normal;
+  color: rgba(0, 0, 0, 0.5);
+  /* 设置文字阴影 */
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.7);
+}

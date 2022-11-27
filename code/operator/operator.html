@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <title>显示</title>
+    <style>
+      .switch-holder {
+        display: flex;
+        width: 350px;
+        padding: 10px 20px;
+        border-radius: 10px;
+        box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.7),
+          10px 10px 10px rgba(0, 0, 0, 0.2),
+          inset 8px 8px 15px rgba(255, 255, 255, 0.7),
+          inset 10px 10px 10px rgba(0, 0, 0, 0.2);
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .switch-label {
+        padding: 0 20px 0 10px;
+      }
+
+      .switch-label i {
+        margin-right: 5px;
+      }
+
+      .switch-toggle {
+        height: 40px;
+      }
+
+      .switch-toggle input[type="checkbox"] {
+        position: absolute;
+        opacity: 0;
+        z-index: -2;
+      }
+
+      .switch-toggle input[type="checkbox"] + label {
+        position: relative;
+        display: inline-block;
+        width: 100px;
+        height: 40px;
+        border-radius: 20px;
+        margin: 0;
+        cursor: pointer;
+        box-shadow: inset -8px -8px 15px rgba(255, 255, 255, 0.6),
+          inset 10px 10px 10px rgba(0, 0, 0, 0.25);
+      }
+
+      .switch-toggle input[type="checkbox"] + label::before {
+        position: absolute;
+        content: "OFF";
+        font-size: 13px;
+        text-align: center;
+        line-height: 25px;
+        top: 8px;
+        left: 8px;
+        width: 45px;
+        height: 25px;
+        border-radius: 20px;
+        background-color: #eeeeee;
+        box-shadow: -3px -3px 5px rgba(255, 255, 255, 0.5),
+          3px 3px 5px rgba(0, 0, 0, 0.25);
+        transition: 0.3s ease-in-out;
+      }
+
+      .switch-toggle input[type="checkbox"]:checked + label::before {
+        left: 50%;
+        content: "ON";
+        color: #fff;
+        background-color: #00b33c;
+        box-shadow: -3px -3px 5px rgba(255, 255, 255, 0.5), 3px 3px 5px #00b33c;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="menu">
+      <ul>
+        <li class="list"><a href="#home">相关信息</a></li>
+        <li class="list"><a href="#news">房间管理</a></li>
+        <li class="list"><a href="#contact">前台服务</a></li>
+        <li class="list"><a href="#about">意见反馈</a></li>
+        <li class="list"><a href="#buy">设置</a></li>
+      </ul>
+    </div>
+    <div class="shell">
+      <div class="glass">
+        <div class="glass-text">
+          <div class="fun active">
+            <div class="card">
+              <h2>相关信息</h2>
+              <img src="userpicture.jpeg" alt="" height="320" class="image" />
+              <div class="line"></div>
+              <ul>
+                <li>住户姓名：XXX</li>
+                <li>入住时间：XXXX年XX月XX日</li>
+                <li>退房时间：XXXX年XX月XX日</li>
+                <li class="room--info">房间信息:</li>
+                <ul class="room-info">
+                  <li>房号1208</li>
+                  <li>本层禁烟🚭</li>
+                  <li>2张1.5米双人床🛏️</li>
+                  <li>Wi—Fi免费（Wi-Fi密码: 12345678）</li>
+                </ul>
+              </ul>
+            </div>
+          </div>
+
+          <div class="fun">
+            <div class="card">
+              <h2>房间管理</h2>
+              <div class="line"></div>
+              <ul class="check">
+                <li>
+                  <div class="switch-holder">
+                    <div class="switch-label">
+                      <i class="fa fa-bluetooth-b"></i><span>走廊灯</span>
+                    </div>
+                    <div class="switch-toggle">
+                      <input type="checkbox" id="bluetooth" />
+                      <label for="bluetooth"></label>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="switch-holder">
+                    <div class="switch-label">
+                      <i class="fa fa-bluetooth-b"></i><span>浴室灯</span>
+                    </div>
+                    <div class="switch-toggle">
+                      <input type="checkbox" id="light" />
+                      <label for="light"></label>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="switch-holder">
+                    <div class="switch-label">
+                      <i class="fa fa-bluetooth-b"></i><span>床头灯</span>
+                    </div>
+                    <div class="switch-toggle">
+                      <input type="checkbox" id="light-bed" />
+                      <label for="light-bed"></label>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="switch-holder">
+                    <div class="switch-label">
+                      <i class="fa fa-bluetooth-b"></i><span>电视灯</span>
+                    </div>
+                    <div class="switch-toggle">
+                      <input type="checkbox" id="light-tv" />
+                      <label for="light-tv"></label>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <ul class="check-right">
+                <li>
+                  <div class="switch-holder">
+                    <div class="switch-label">
+                      <i class="fa fa-bluetooth-b"></i><span>窗帘</span>
+                    </div>
+                    <div class="switch-toggle">
+                      <input type="checkbox" id="window" />
+                      <label for="window"></label>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="switch-holder">
+                    <div class="switch-label">
+                      <i class="fa fa-bluetooth-b"></i><span>落地灯</span>
+                    </div>
+                    <div class="switch-toggle">
+                      <input type="checkbox" id="light-ground" />
+                      <label for="light-ground"></label>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="switch-holder">
+                    <div class="switch-label">
+                      <i class="fa fa-bluetooth-b"></i><span>浴霸</span>
+                    </div>
+                    <div class="switch-toggle">
+                      <input type="checkbox" id="light-rest" />
+                      <label for="light-rest"></label>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="switch-holder">
+                    <div class="switch-label">
+                      <i class="fa fa-bluetooth-b"></i><span>热水</span>
+                    </div>
+                    <div class="switch-toggle">
+                      <input type="checkbox" id="hot-water" />
+                      <label for="hot-water"></label>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="fun">
+            <div class="card">
+              <img src="service.jpg" alt="" height="320" class="image" />
+              <h2>前台服务</h2>
+              <div class="line"></div>
+              <ul>
+                <li class="service">
+                  <div class="call-service">
+                    <h3>呼叫服务员<button class="btn-1">呼叫</button></h3>
+                  </div>
+                </li>
+                <li>
+                  <div class="call-meal">
+                    <h3>预约餐点<button class="btn-2">预约</button></h3>
+                  </div>
+                </li>
+                <li>
+                  <div class="call-morning">
+                    <h3>Morning Call<button class="btn-3">预约</button></h3>
+                  </div>
+                </li>
+                <li>
+                  <div class="call-clean">
+                    <h3>预约清扫<button class="btn-4">预约</button></h3>
+                  </div>
+                </li>
+                <li>
+                  <div class="call-back">
+                    <h3>提前退房<button class="btn-5">预约</button></h3>
+                  </div>
+                </li>
+              </ul>
+              <div class="phone">
+                <h4>联系方式: 137 0653 XXXX</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="fun">
+            <div class="card">
+              <h2>意见反馈</h2>
+              <div class="line"></div>
+              <div class="Content-Main">
+                <div class="Content-Main1">
+                  <h1>用户反馈</h1>
+                </div>
+                <form action="" method="post" class="form-report">
+                  <label>
+                    <span>联系方式:</span>
+                    <select name="select2" class="select2">
+                      <option value="Email">邮箱</option>
+                      <option value="Phone">电话</option>
+                      <option value="QQ">QQ</option>
+                    </select>
+                    <input type="text" placeholder="" />
+                  </label>
+                  <label>
+                    <span>意见:</span>
+                    <textarea
+                      id="mesaage"
+                      name="message"
+                      placeholder="您的宝贵意见"
+                    ></textarea>
+                  </label>
+                  <label>
+                    <span>整改方向:</span>
+                    <select name="select1" class="select1">
+                      <option value="Job Inquiry">客房卫生</option>
+                      <option value="General Question">前台服务</option>
+                      <option value="General Question">服务态度</option>
+                      <option value="General Question">餐点质量</option>
+                    </select>
+                  </label>
+                  <label>
+                    <input type="button" class="button" value="反馈" />
+                  </label>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="fun">
+            <div class="card">
+              <h2>设置</h2>
+              <div class="line"></div>
+              <h1>功能敬请期待！</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
